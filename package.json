@@ -1,0 +1,16 @@
+{
+  "name": "smart-nutrition-fruit-advisor",
+  "version": "1.0.0",
+  "description": "Desktop app for fruit nutrition tracking",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "keywords": ["nutrition", "fruit", "electron"],
+  "author": "Your Name",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^40.2.1"
+  }
+}

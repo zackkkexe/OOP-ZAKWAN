@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit Tracker</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="side-menu">
+        <div class="menu-header">
+            <h3>Fruit<span>Tracker</span></h3>
+        </div>
+        
+        <div class="menu-buttons">
+            <button onclick="showPage('home')" id="homeBtn" class="menu-btn active">🏠 Home</button>
+            <button onclick="showPage('saved')" id="savedBtn" class="menu-btn">📁 Saved</button>
+        </div>
+        
+
+    </div>
+    
+
+    <div class="main-area">
+
+        <div id="homePage" class="page">
+            <div class="page-header">
+                <h2>Browse Fruits</h2>
+                <div class="search-box">
+                    <select id="goalSelect">
+                        <option value="all">All fruits</option>
+                        <option value="lowcal">Low calorie</option>
+                        <option value="protein">High protein</option>
+                        <option value="lowsugar">Low sugar</option>
+                    </select>
+                    <button onclick="getFruitData()" class="action-btn">Go</button>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <p><span class="label">Highest sugar:</span> <span id="sugarInfo">-</span></p>
+            </div>
+            
+            <div id="fruitContainer" class="card-grid"></div>
+        </div>
+        
+
+        <div id="savedPage" class="page" style="display: none;">
+            <div class="page-header">
+                <h2>My Saved Fruits</h2>
+            </div>
+            
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <span class="stat-label">Total items</span>
+                    <span class="stat-number" id="totalItems">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total calories</span>
+                    <span class="stat-number" id="totalCalories">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Average</span>
+                    <span class="stat-number" id="avgCalories">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total sugar</span>
+                    <span class="stat-number" id="totalSugar">0g</span>
+                </div>
+            </div>
+            
+            <div id="savedContainer" class="card-grid"></div>
+            
+
+            <div id="editForm" class="edit-form" style="display: none;">
+                <h3>Edit Quantity</h3>
+                <p id="editFruitName"></p>
+                <input type="number" id="editQuantity" min="1" value="1">
+                <div class="form-buttons">
+                    <button onclick="saveEdit()" class="save-btn">Save</button>
+                    <button onclick="cancelEdit()" class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
